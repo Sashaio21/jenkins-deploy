@@ -1,9 +1,3 @@
-FROM python:3.12
+FROM jenkins/jenkins:lts
 
-WORKDIR /app
-
-COPY . .
-
-RUN pip install pytest
-
-CMD ["pytest"]
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
